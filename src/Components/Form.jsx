@@ -4,11 +4,15 @@ import classes from "./Form.module.css"
 
 const Form = () => {
 
+    // Saving input data in a object called 'inputData'
     const [inputData, setInputData] = useState({
         username : "",
         height : "",
         weight : ""
     }) 
+
+    // Saving all the inputData in a array of objects where all the data of the users will be saved
+    const [allUserData, setAllUserData] = useState([]);
 
     const inputChangeHandler = (event) => {
 
@@ -24,7 +28,9 @@ const Form = () => {
     }
 
     const submitHandler = (props) => {
-        
+        setAllUserData((prevUserData) => {
+            return [...prevUserData, allUserData]
+        })
     }
 
     return <react.Fragment>
