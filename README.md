@@ -5,5 +5,10 @@
  - How to use CSS and maintain it with react projects
  - How to render list-data in component
 
-
+### To Start
+- First fork the project and clone to your local directory
+    `git clone https://github.com/PriyanshuIndra/BMI-ReactCalculator`
+- Then go to the directory and install the packages
+    `npm install`
+- Then you're good to go :)
 
