@@ -2,7 +2,7 @@ import react, { useState } from "react";
 import classes from "./Form.module.css"
 
 
-const Form = () => {
+const Form = (props) => {
 
     // Saving input data in a object called 'inputData'
     const [inputData, setInputData] = useState({
@@ -10,9 +10,6 @@ const Form = () => {
         height : "",
         weight : ""
     }) 
-
-    // Saving all the inputData in a array of objects where all the data of the users will be saved
-    const [allUserData, setAllUserData] = useState([]);
 
     const inputChangeHandler = (event) => {
 
@@ -24,29 +21,33 @@ const Form = () => {
             }
         })
         console.log(inputData)
+    }
+
+    const submitHandler = (event) => {
+    
+        setInputData({
+            username: "",
+            height: "",
+            weight: ""
+        })
         event.preventDefault();
     }
 
-    const submitHandler = (props) => {
-        setAllUserData((prevUserData) => {
-            return [...prevUserData, allUserData]
-        })
-    }
-
     return <react.Fragment>
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor="username">Name</label>
-            <input name="username" id="username" type='text' onChange={inputChangeHandler} value={inputData.username} />
+            <input className={classes.inputBoxes} autoComplete="off" name="username" id="username" type='text' onChange={inputChangeHandler} value={inputData.username} />
             
             <label htmlFor="weight">Body mass (in kg)</label>
-            <input name="weight" id="weight" type="number" onChange={inputChangeHandler} value={inputData.weight} />
+            <input className={classes.inputBoxes} name="weight" id="weight" type="number" onChange={inputChangeHandler} value={inputData.weight} />
 
             <label htmlFor="height">Height(in m)</label>
-            <input name="height" type="number" id="height" onChange={inputChangeHandler} value={inputData.height} />
+            <input step='0.1' className={classes.inputBoxes} name="height" type="number" id="height" onChange={inputChangeHandler} value={inputData.height} />
 
-            <button type="submit">Submit</button>
+            <button className={classes.btn} type="submit">Submit</button>
         </form>
     </react.Fragment>
 }
 
 export default Form;
+

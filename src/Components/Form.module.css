@@ -1,0 +1,26 @@
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputBoxes {
+    font-size: 20px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
