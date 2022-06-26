@@ -7,9 +7,9 @@ function App() {
 
   const [usersData, setUsersData] = useState([]);
 
-  function addUserHandler(uName, uWeight, uHeight) {
+  function addUserHandler(inputData) {
     setUsersData((prevData) => {
-      return [...prevData, {name: uName, weight: uWeight,height: uHeight}]
+      return [...prevData, {name: inputData.userName, weight: inputData.weight,height: inputData.height}]
     })
   }
 
@@ -17,7 +17,7 @@ function App() {
     <react.Fragment>
     <div className={classes.main}>
       <h1 className={classes.heading}>BMI Calculator</h1>
-      <Form onAddUser={addUserHandler}/>
+      <Form onAddUser={addUserHandler} onTakingData={addUserHandler}/>
     </div>
     </react.Fragment>
   );

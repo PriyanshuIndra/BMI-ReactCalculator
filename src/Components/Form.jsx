@@ -22,6 +22,7 @@ const Form = (props) => {
         })
         console.log(inputData)
     }
+    props.onTakingData(inputData);
 
     const submitHandler = (event) => {
     
@@ -30,6 +31,7 @@ const Form = (props) => {
             height: "",
             weight: ""
         })
+
         event.preventDefault();
     }
 
@@ -50,4 +52,5 @@ const Form = (props) => {
 }
 
 export default Form;
+
 
