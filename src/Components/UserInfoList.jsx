@@ -8,7 +8,7 @@ const UserInfoList = (props) => {
 
     return <React.Fragment>
         <div className={classes.UserInfoList}>
-
+            
         </div>
     </React.Fragment>
     

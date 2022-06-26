@@ -22,10 +22,11 @@ const Form = (props) => {
         })
         console.log(inputData)
     }
-    props.onTakingData(inputData);
 
     const submitHandler = (event) => {
-    
+
+        props.onAddUser(inputData.username, inputData.height, inputData.weight)
+
         setInputData({
             username: "",
             height: "",

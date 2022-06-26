@@ -1,23 +1,25 @@
 import react, { useState } from "react";
 import classes from "./App.module.css"
 import Form from "./Components/Form";
-
+import UserInfoList from "./Components/UserInfoList";
 
 function App() {
 
   const [usersData, setUsersData] = useState([]);
 
-  function addUserHandler(inputData) {
+  function addUserHandler(username, height, weight) {
     setUsersData((prevData) => {
-      return [...prevData, {name: inputData.userName, weight: inputData.weight,height: inputData.height}]
+      return [...prevData, {uName: username, height: height, weight: weight}]
     })
+    console.log(usersData)
   }
 
   return (
     <react.Fragment>
     <div className={classes.main}>
       <h1 className={classes.heading}>BMI Calculator</h1>
-      <Form onAddUser={addUserHandler} onTakingData={addUserHandler}/>
+      <Form onAddUser={addUserHandler}/>
+      <UserInfoList onAddingListData={usersData}/>
     </div>
     </react.Fragment>
   );
