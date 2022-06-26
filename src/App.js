@@ -11,7 +11,6 @@ function App() {
     setUsersData((prevData) => {
       return [...prevData, {uName: username, height: height, weight: weight}]
     })
-    console.log(usersData)
   }
 
   return (
@@ -19,7 +18,7 @@ function App() {
     <div className={classes.main}>
       <h1 className={classes.heading}>BMI Calculator</h1>
       <Form onAddUser={addUserHandler}/>
-      <UserInfoList onAddingListData={usersData}/>
+      <UserInfoList onListData={usersData}/>
     </div>
     </react.Fragment>
   );
