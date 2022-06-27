@@ -13,10 +13,6 @@ function App() {
     })
   }
 
-  function bmiCalculationResult() {
-    
-  }
-
   return (
     <react.Fragment>
     <div className={classes.main}>

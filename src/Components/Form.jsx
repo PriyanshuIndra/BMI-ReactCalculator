@@ -27,14 +27,12 @@ const Form = (props) => {
     const submitHandler = (event) => {
 
         props.onAddUser(inputData)
-
         setInputData({
             username: "",
             height: "",
-            weight: "",
+            weight: ""
         })
         
-
         event.preventDefault();
     }
 
