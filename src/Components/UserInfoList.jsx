@@ -5,11 +5,10 @@ import UserDataCard from "./UserDataCard";
 const UserInfoList = (props) => {
     
 
-
     return <React.Fragment>
         <div className={classes.UserInfoList}>
            {props.onListData.map((eachPersonData) => {
-                <UserDataCard userName={eachPersonData.uName} height={eachPersonData.height} weight={eachPersonData.weight} />
+                return <UserDataCard userName={eachPersonData.uName} height={eachPersonData.height} weight={eachPersonData.weight} />
            })} 
         </div>
     </React.Fragment>
