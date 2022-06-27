@@ -4,6 +4,7 @@ import classes from "./Form.module.css"
 
 const Form = (props) => {
 
+
     // Saving input data in a object called 'inputData'
     const [inputData, setInputData] = useState({
         username : "",
@@ -25,13 +26,14 @@ const Form = (props) => {
 
     const submitHandler = (event) => {
 
-        props.onAddUser(inputData.username, inputData.height, inputData.weight)
+        props.onAddUser(inputData)
 
         setInputData({
             username: "",
             height: "",
-            weight: ""
+            weight: "",
         })
+        
 
         event.preventDefault();
     }
@@ -53,4 +55,3 @@ const Form = (props) => {
 }
 
 export default Form;
-

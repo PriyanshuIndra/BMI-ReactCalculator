@@ -1,16 +1,20 @@
 import react, { useState } from "react";
 import classes from "./App.module.css"
 import Form from "./Components/Form";
-import UserInfoList from "./Components/UserInfoList";
+import UserDataCard from "./Components/UserDataCard";
 
 function App() {
 
   const [usersData, setUsersData] = useState([]);
 
-  function addUserHandler(username, height, weight) {
+  function addUserHandler(newUserData) {
     setUsersData((prevData) => {
-      return [...prevData, {uName: username, height: height, weight: weight}]
+      return [...prevData, newUserData]
     })
+  }
+
+  function bmiCalculationResult() {
+    
   }
 
   return (
@@ -18,7 +22,9 @@ function App() {
     <div className={classes.main}>
       <h1 className={classes.heading}>BMI Calculator</h1>
       <Form onAddUser={addUserHandler}/>
-      <UserInfoList onListData={usersData}/>
+      {usersData.map((eachUserData, index) => {
+        return <UserDataCard key={index} userName={eachUserData.username} height={eachUserData.height} weight={eachUserData.weight} />
+      })}
     </div>
     </react.Fragment>
   );
