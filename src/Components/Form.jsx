@@ -49,8 +49,6 @@ const Form = (props) => {
     }
 
     
-    
-
     return <react.Fragment>
         <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor="username">Name</label>
