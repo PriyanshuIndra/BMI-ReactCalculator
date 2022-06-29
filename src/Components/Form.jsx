@@ -36,7 +36,6 @@ const Form = (props) => {
         }
 
         bmiCalculator()
-        console.log(inputData);   // Checking things with console.log()
         props.onAddUser(inputData)
 
         setInputData({
