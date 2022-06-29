@@ -32,6 +32,7 @@ const Form = (props) => {
             const weight = parseFloat(inputData.weight);
 
             inputData.bmi_value = weight/(height*height);
+            inputData.bmi_value = inputData.bmi_value.toFixed(2) // toFixed(2) will display the floating no. upto 2 decimal places only
         }
 
         bmiCalculator()

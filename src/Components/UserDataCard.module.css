@@ -2,6 +2,7 @@
 .main {
     background-color: #d9d9d9;
     margin-top: 20px;
+    width: 50%;
 }
 
 .userName {
@@ -17,7 +18,7 @@
 }
 
 .bmiValue {
-    
+
 }
 
 
