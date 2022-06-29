@@ -9,7 +9,8 @@ const Form = (props) => {
     const [inputData, setInputData] = useState({
         username : "",
         height : "",
-        weight : ""
+        weight : "",
+        bmi_value: 0
     }) 
 
     const inputChangeHandler = (event) => {
@@ -21,20 +22,34 @@ const Form = (props) => {
                 [name]: value
             }
         })
-        console.log(inputData)
+        
     }
 
     const submitHandler = (event) => {
 
+        function bmiCalculator() {
+            const height = parseFloat(inputData.height);
+            const weight = parseFloat(inputData.weight);
+
+            inputData.bmi_value = weight/(height*height);
+        }
+
+        bmiCalculator()
+        console.log(inputData);   // Checking things with console.log()
         props.onAddUser(inputData)
+
         setInputData({
             username: "",
             height: "",
-            weight: ""
+            weight: "",
+            bmi_value: 0
         })
         
         event.preventDefault();
     }
+
+    
+    
 
     return <react.Fragment>
         <form onSubmit={submitHandler} className={classes.form}>
