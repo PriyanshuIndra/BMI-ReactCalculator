@@ -20,7 +20,16 @@ function App() {
       <h1 className={classes.heading}>BMI Calculator</h1>
       <Form onAddUser={addUserHandler}/>
       {usersData.map((eachUserData, index) => {
-        return <UserDataCard key={index} userName={eachUserData.username} height={eachUserData.height} weight={eachUserData.weight} bmiValue={eachUserData.bmi_value} />
+        return <UserDataCard 
+        
+            key={index} 
+            userName={eachUserData.username} 
+            height={eachUserData.height} 
+            weight={eachUserData.weight} 
+            bmiValue={eachUserData.bmi_value} 
+            bmiMessage={eachUserData.bmiMessage} 
+
+            />
       })}
     </div>
     </react.Fragment>

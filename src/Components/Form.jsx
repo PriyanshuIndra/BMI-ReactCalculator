@@ -4,13 +4,13 @@ import classes from "./Form.module.css"
 
 const Form = (props) => {
 
-
     // Saving input data in a object called 'inputData'
     const [inputData, setInputData] = useState({
         username : "",
         height : "",
         weight : "",
-        bmi_value: 0
+        bmi_value: 0,
+        bmiMessage: ""
     }) 
 
     const inputChangeHandler = (event) => {
@@ -32,17 +32,32 @@ const Form = (props) => {
             const weight = parseFloat(inputData.weight);
 
             inputData.bmi_value = weight/(height*height);
-            inputData.bmi_value = inputData.bmi_value.toFixed(2) // toFixed(2) will display the floating no. upto 2 decimal places only
+
+            // toFixed(2) will display the floating no. upto 2 decimal places only
+            inputData.bmi_value = inputData.bmi_value.toFixed(2) 
         }
 
+
         bmiCalculator()
-        props.onAddUser(inputData)
+
+        if (inputData.bmi_value <= 18.5) {
+            inputData.bmiMessage = "You're underweight";
+        } else if (inputData.bmi_value > 18.5 && inputData.bmi_value <= 24.9) {
+            inputData.bmiMessage = "Your BMI is normal. You're fit";
+        } else {
+            inputData.bmiMessage = "You're over-weight";
+        }
+
+        console.log(inputData.bmi_value, inputData.bmiMessage);
+
+        props.onAddUser(inputData); 
 
         setInputData({
             username: "",
             height: "",
             weight: "",
-            bmi_value: 0
+            bmi_value: 0,
+            bmiMessage: ""
         })
         
         event.preventDefault();
