@@ -6,6 +6,7 @@
  - How to render list-data in component
 
 ### To Start
+- You should have Node installed on your system. If you haven't installed then you can download it [from here](https://nodejs.org/en/download/)
 - First fork the project and clone to your local directory
     `git clone https://github.com/PriyanshuIndra/BMI-ReactCalculator`
 - Then go to the directory and install the packages
