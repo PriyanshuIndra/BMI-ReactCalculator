@@ -5,6 +5,9 @@ import classes from "./Form.module.css"
 const Form = (props) => {
 
     // Saving input data in a object called 'inputData'
+
+    const [errorMssg, setErrorMssg] = useState(true);
+
     const [inputData, setInputData] = useState({
         username : "",
         height : "",
@@ -26,6 +29,8 @@ const Form = (props) => {
     }
 
     const submitHandler = (event) => {
+        
+
 
         function bmiCalculator() {
             const height = parseFloat(inputData.height);
