@@ -6,8 +6,6 @@ const Form = (props) => {
 
     // Saving input data in a object called 'inputData'
 
-    const [errorMssg, setErrorMssg] = useState(true);
-
     const [inputData, setInputData] = useState({
         username : "",
         height : "",
